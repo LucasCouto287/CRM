@@ -1,0 +1,15 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "A RESTful Web API built with Node.js and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "author": "Abdullah Khan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
