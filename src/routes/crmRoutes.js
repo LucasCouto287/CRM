@@ -1,4 +1,4 @@
-import {addNewContact} from "../controllers/crmController"
+import {addNewContact, getContacts, getContactWithID} from "../controllers/crmController"
 
 const routes = (app) => {
   app.route("/contact")
@@ -7,16 +7,18 @@ const routes = (app) => {
        console.log(`Request from: ${req.originalUrl}`)
        console.log(`Request type: ${req.method}`)
        next()
-     }, (req, res, next) => {
-       res.send("GET request successful!")
-     })
+     }, getContacts)
      // POST endpoint
      .post(addNewContact)
-
+// TODO: git commit -m "Create GET endpoint to get specific contact or all contacts"
   app.route("/contact/:contactID")
+     // get specific contact based on ID
+     .get(getContactWithID)
+     // PUT request
      .put((req, res) => {
        res.send("PUT request successful!")
      })
+     // DELETE request
      .delete((req, res) => {
        res.send("DELETE request successful!")
      });
